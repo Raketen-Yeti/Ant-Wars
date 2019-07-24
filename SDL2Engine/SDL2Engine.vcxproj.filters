@@ -32,6 +32,12 @@
     <ClCompile Include="World.cpp">
       <Filter>Game\World</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Entity\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Physic.cpp">
+      <Filter>Engine\Physic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -82,6 +88,18 @@
     <Filter Include="Game\World">
       <UniqueIdentifier>{29afb20d-6414-4620-be7b-d7e6a217fe63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Entity">
+      <UniqueIdentifier>{b3040ad9-4446-4de3-914d-c8e0603d3532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entity\Player">
+      <UniqueIdentifier>{c0c83824-16a8-4a51-988f-f5c7c2c52044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Physic">
+      <UniqueIdentifier>{9e41fc29-4d52-4182-a0ea-34aba9d32944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Config">
+      <UniqueIdentifier>{c2ba8b38-615b-4565-881a-9253c483d05b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -128,6 +146,18 @@
     </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Game\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Entity\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Physic.h">
+      <Filter>Engine\Physic</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Engine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Engine\Config</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

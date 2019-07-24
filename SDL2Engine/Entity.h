@@ -32,6 +32,18 @@ public:
 
 #pragma region public inline function
 	/// <summary>
+	/// get tag of entity
+	/// </summary>
+	/// <returns>tag of entity</returns>
+	inline const char* GetTag() { return m_pTag; }
+
+	/// <summary>
+	/// set tag of entity
+	/// </summary>
+	/// <param name="_pTag">tag to set</param>
+	inline void SetTag(const char* _pTag) { m_pTag = _pTag; }
+
+	/// <summary>
 	/// get position of entity
 	/// </summary>
 	/// <returns>position of entity</returns>
@@ -51,6 +63,13 @@ public:
 #pragma endregion
 
 protected:
+#pragma region protected primitive variable
+	/// <summary>
+	/// tag of entity
+	/// </summary>
+	const char* m_pTag = "";
+#pragma endregion
+
 #pragma region protected variable
 	/// <summary>
 	/// position of entity

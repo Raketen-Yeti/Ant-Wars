@@ -47,16 +47,34 @@ public:
 
 #pragma region public inline function
 	/// <summary>
+	/// get all scene entities
+	/// </summary>
+	/// <returns>list of all scene entities</returns>
+	inline list<CEntity*> GetSceneEntities() { return m_pSceneEntities; }
+
+	/// <summary>
 	/// add entity to scene entities
 	/// </summary>
 	/// <param name="_pEntity">entity reference to add</param>
 	inline void AddSceneEntity(CEntity* _pEntity) { AddEntity(_pEntity, m_pSceneEntities); }
 
 	/// <summary>
+	/// get all ui entities
+	/// </summary>
+	/// <returns>list of all ui entities</returns>
+	inline list<CEntity*> GetUIEntities() { return m_pUIEntities; }
+
+	/// <summary>
 	/// add entity to ui entities
 	/// </summary>
 	/// <param name="_pEntity">entity reference to add</param>
 	inline void AddUIEntity(CEntity* _pEntity) { AddEntity(_pEntity, m_pUIEntities); }
+
+	/// <summary>
+	/// get all persistent entities
+	/// </summary>
+	/// <returns>list of all persistent entities</returns>
+	inline list<CEntity*> GetPersistentEntities() { return m_pPersistentEntities; }
 
 	/// <summary>
 	/// add entity to persistent entities

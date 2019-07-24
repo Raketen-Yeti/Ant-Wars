@@ -40,9 +40,6 @@ void CTime::Update()
 
 		// decrease time since last time stamp
 		m_timeSinceLastTimeStamp -= CLOCKS_PER_SEC;
-
-		// reset delta time
-		m_deltaTime = 0.0f;
 	}
 }
 #pragma endregion

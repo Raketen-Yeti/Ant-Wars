@@ -14,6 +14,7 @@
 #include "Input.h"
 #include "Time.h"
 #include "ContentManagement.h"
+#include "Config.h"
 #pragma endregion
 
 #pragma region using
@@ -38,7 +39,7 @@ int CEngine::Init()
 		SDL_WINDOWPOS_CENTERED,	// position x
 		SDL_WINDOWPOS_CENTERED,	// position y
 		SCREEN_WIDTH,			// width
-		SCREE_HEIGHT,			// height
+		SCREEN_HEIGHT,			// height
 		SDL_WINDOW_SHOWN);		// flags (F12)
 
 	// if window nullptr

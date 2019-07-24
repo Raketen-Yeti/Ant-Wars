@@ -15,7 +15,7 @@ public:
 	/// constructor
 	/// </summary>
 	/// <param name="_pFileName">relative file path name</param>
-	GWorld(const char* _pFileName)
+	GWorld(const char* _pFileName = nullptr)
 		: CTexturedEntity(SVector2(), SVector2(), _pFileName) {}
 
 	/// <summary>

@@ -10,8 +10,6 @@ class CContentManagement;
 #pragma endregion
 
 #pragma region macro value
-#define SCREEN_WIDTH 1280
-#define SCREE_HEIGHT 720
 #define ENGINE CEngine::Get()
 #define RENDERER CEngine::Get()->GetRenderer()
 #define CTM CEngine::Get()->GetCTM()

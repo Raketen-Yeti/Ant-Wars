@@ -13,6 +13,10 @@
 // constructor
 CTexture::CTexture(const char * _pFileName)
 {
+	// if texture null return
+	if (!_pFileName)
+		return;
+
 	// load texture
 	m_pTexture = IMG_LoadTexture(
 		RENDERER->GetSDLRenderer(),			// sdl renderer

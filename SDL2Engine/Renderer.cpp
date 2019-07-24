@@ -6,6 +6,7 @@
 #include "Renderer.h"
 #include "Texture.h"
 #include "Rect.h"
+#include "Config.h"
 #pragma endregion
 
 #pragma region constructor
@@ -37,11 +38,33 @@ void CRenderer::ClearScreen()
 }
 
 // render texture
-void CRenderer::RenderTexture(CTexture* _pTexture, SRect* _pDstRect, SRect* _pSrcRect, float _angle, SVector2 _mirror)
+void CRenderer::RenderTexture(CTexture* _pTexture, SRect* _pDstRect, SRect* _pSrcRect, float _angle, SVector2 _mirror, bool _inWorld)
 {
 	// if texture not valid
 	if (!_pTexture)
+	{
 		return;
+	}
+
+	// if textre rendered in world and of out camera range
+	else if (_inWorld && _pDstRect && (
+		(_pDstRect->x < m_camera.X - SCREEN_WIDTH * 0.5f - _pDstRect->w) ||
+		(_pDstRect->x > m_camera.X + SCREEN_WIDTH * 0.5f) ||
+		(_pDstRect->y < m_camera.Y - SCREEN_HEIGHT * 0.5f - _pDstRect->h) ||
+		(_pDstRect->y > m_camera.Y + SCREEN_HEIGHT * 0.5f)
+		))
+	{
+		return;
+	}
+
+	// if textre not rendered in world and of out screen return
+	else if (!_inWorld && _pDstRect && (
+		(_pDstRect->x < -_pDstRect->w) || (_pDstRect->x > SCREEN_WIDTH) ||
+		(_pDstRect->y < -_pDstRect->h) || (_pDstRect->y > SCREEN_HEIGHT)
+		))
+	{
+		return;
+	}
 
 	// set rotation center point
 	SDL_Point rotationPoint;
@@ -52,6 +75,14 @@ void CRenderer::RenderTexture(CTexture* _pTexture, SRect* _pDstRect, SRect* _pSr
 		// set rotation point
 		rotationPoint.x = _pDstRect->w / 2;
 		rotationPoint.y = _pDstRect->h / 2;
+
+		// if object is rendered in world
+		if (_inWorld)
+		{
+			// offset of destination rect depending on camera position
+			_pDstRect->x -= m_camera.X - SCREEN_WIDTH * 0.5f;
+			_pDstRect->y -= m_camera.Y - SCREEN_HEIGHT * 0.5f;
+		}
 	}
 
 	// if width or height of destination rect 0 set to nullptr

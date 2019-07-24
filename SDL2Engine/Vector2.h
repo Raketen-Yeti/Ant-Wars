@@ -42,5 +42,16 @@ public:
 		// return new vector by add other vector components to this components
 		return SVector2(X + _vec.X, Y + _vec.Y);
 	}
+
+	/// <summary>
+	/// vector 2 * float
+	/// </summary>
+	/// <param name="_value">float to multiply</param>
+	/// <returns>new vector 2d with every component multiplied by value</returns>
+	SVector2 operator * (float _value)
+	{
+		// return new vector by multiply x and y value with given float value
+		return SVector2(X * _value, Y * _value);
+	}
 #pragma endregion
 };

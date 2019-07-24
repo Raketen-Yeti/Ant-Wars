@@ -1,6 +1,8 @@
 #pragma once
 
+#pragma region project include
 #include "Vector2.h"
+#pragma endregion
 
 #pragma region forward decleration
 class SRect;
@@ -32,6 +34,12 @@ public:
 
 #pragma region public inline function
 	/// <summary>
+	/// set camera position
+	/// </summary>
+	/// <param name="_pos">position to set</param>
+	inline void SetCamera(SVector2 _pos) { m_camera = _pos; }
+
+	/// <summary>
 	/// get sdl renderer
 	/// </summary>
 	/// <returns>sdl renderer reference</returns>
@@ -52,8 +60,9 @@ public:
 	/// <param name="_pSrcRect">source rect of texture reference</param>
 	/// <param name="_angle">angle of texture</param>
 	/// <param name="_mirror">x != 0 than mirror horizontal, y != 0 than mirror vertical</param>
+	/// <param name="_inWorld">texture is rendered in world or screen (UI)</param>
 	void RenderTexture(CTexture* _pTexture, SRect* _pDstRect = nullptr, SRect* _pSrcRect = nullptr, 
-		float _angle = 0.0f, SVector2 _mirror = SVector2());
+		float _angle = 0.0f, SVector2 _mirror = SVector2(), bool _inWorld = true);
 
 	/// <summary>
 	/// present rendered screen
@@ -62,6 +71,13 @@ public:
 #pragma endregion
 
 private:
+#pragma region private variable
+	/// <summary>
+	/// camera position
+	/// </summary>
+	SVector2 m_camera = SVector2();
+#pragma endregion
+
 #pragma region private pointer
 	/// <summary>
 	/// sdl renderer reference

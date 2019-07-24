@@ -7,6 +7,7 @@
 
 #pragma region forward decleration
 class CTexturedEntity;
+class GWorld;
 #pragma endregion
 
 /// <summary>
@@ -57,8 +58,8 @@ public:
 	CTexturedEntity* m_pEnemy = nullptr;
 
 	/// <summary>
-	/// background texture
+	/// world reference
 	/// </summary>
-	CTexturedEntity* m_pBackground = nullptr;
+	GWorld* m_pWorld = nullptr;
 #pragma endregion
 };
